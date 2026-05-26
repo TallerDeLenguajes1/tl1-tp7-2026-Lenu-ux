@@ -42,7 +42,7 @@ do
                 }  
             break;
              case 3://multiplicacion
-                 Console.WriteLine("INgrese el numero a multiplicar: ");
+                 Console.WriteLine("Ingrese el numero a multiplicar: ");
                  if (double.TryParse(Console.ReadLine(), out double numMulti))
                 {
                     calc.Sumar(numMulti);
@@ -52,7 +52,7 @@ do
                 }  
             break;
              case 4://division
-                     Console.WriteLine("INgrese el numero a restar: ");
+                     Console.WriteLine("Ingrese el numero a restar: ");
                  if (double.TryParse(Console.ReadLine(), out double numDiv))
                 {
                     calc.Sumar(numDiv);
