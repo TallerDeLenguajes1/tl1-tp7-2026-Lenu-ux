@@ -1,5 +1,35 @@
 namespace EspacioCalculadora;
-public class EspacioCalculadora
+public class Calculadora
 {
+    private double dato;//atributo siempre privado
+    //public double Dato { get => dato; }
+    public double Resultado { get => dato;} //propiedad llamada Resultado
     
+    public void Sumar(double termino)
+    {
+        dato +=termino;
+    }
+    public void Restar(double termino)
+    {
+        dato-=termino;
+    }
+    public void Multiplicar(double termino)
+    {
+        dato= dato*termino;
+    }
+    public void Dividir(double termino)
+    {
+        if (termino !=0 )
+        {
+            dato= dato/termino;
+        }
+        else
+        {
+            System.Console.WriteLine("Error, no se puede dividir por cero");
+        }
+    }
+    public void Limpiar()
+    {
+        dato=0;
+    }
 }
