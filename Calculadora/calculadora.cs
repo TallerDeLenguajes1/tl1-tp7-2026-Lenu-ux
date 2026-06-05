@@ -1,7 +1,7 @@
 namespace EspacioCalculadora;
 public class Calculadora
 {
-    private double dato;//atributo siempre privado
+    private double dato=0;//atributo siempre privado
     //public double Dato { get => dato; }
     public double Resultado { get => dato;} //propiedad llamada Resultado
     
@@ -25,7 +25,7 @@ public class Calculadora
         }
         else
         {
-            System.Console.WriteLine("Error, no se puede dividir por cero");
+            Console.WriteLine("Error, no se puede dividir por cero");
         }
     }
     public void Limpiar()

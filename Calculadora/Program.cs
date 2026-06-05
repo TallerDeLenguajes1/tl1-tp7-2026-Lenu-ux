@@ -26,6 +26,7 @@ do
                 if (double.TryParse(Console.ReadLine(), out double numSuma))
                 {
                     calc.Sumar(numSuma);
+                    
                 }else
                 {
                     Console.WriteLine("Error...");
@@ -35,7 +36,7 @@ do
                 Console.WriteLine("INgrese el numero a restar: ");
                  if (double.TryParse(Console.ReadLine(), out double numResta))
                 {
-                    calc.Sumar(numResta);
+                    calc.Restar(numResta);
                 }else
                 {
                     Console.WriteLine("Error...");
@@ -45,17 +46,17 @@ do
                  Console.WriteLine("Ingrese el numero a multiplicar: ");
                  if (double.TryParse(Console.ReadLine(), out double numMulti))
                 {
-                    calc.Sumar(numMulti);
+                    calc.Multiplicar(numMulti);
                 }else
                 {
                     Console.WriteLine("Error...");
                 }  
             break;
              case 4://division
-                     Console.WriteLine("Ingrese el numero a restar: ");
+                     Console.WriteLine("Ingrese el numero a dividir: ");
                  if (double.TryParse(Console.ReadLine(), out double numDiv))
                 {
-                    calc.Sumar(numDiv);
+                    calc.Dividir(numDiv);
                 }else
                 {
                     Console.WriteLine("Error...");
@@ -63,16 +64,20 @@ do
             break;
              case 5://limpiar
                     calc.Limpiar();
+                    System.Console.WriteLine("Calculadora reiniciandose...");
+            break;
+            case 6:
+                    System.Console.WriteLine("Saliendo...");
             break;
             default:
-                   
+                   System.Console.WriteLine("Error");
             break;
         }
+    Console.WriteLine($"El resultado final de las operaciones es: {calc.Resultado}");
 
        
     }else
     {
         Console.WriteLine("Error...ingrese nuevamente un numero del 1 al 6");
     }
-    
 } while (opcion!= 6);
