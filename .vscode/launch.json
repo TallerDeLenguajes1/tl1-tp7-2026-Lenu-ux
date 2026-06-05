@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Calculadora/bin/Debug/net8.0/Calculadora.dll",
+            "program": "${workspaceFolder}/Calculadora/bin/Debug/net10.0/Calculadora.dll",
             "args": [],
             "cwd": "${workspaceFolder}/Calculadora",
             "console": "integratedTerminal",
