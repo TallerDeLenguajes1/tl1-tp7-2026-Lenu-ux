@@ -1,6 +1,6 @@
 ﻿using EspacioSistema;
 Console.WriteLine("Hello, World!");
-
+//c
 Empleado[] listaEmpleados= new Empleado[3];
 //crear y cargar empleado
 for (int i = 0; i < listaEmpleados.Length; i++)
@@ -49,4 +49,16 @@ for (int i = 0; i < listaEmpleados.Length; i++)
     {
         listaEmpleados[i].Cargos=(Cargos)opcion;
     }
+
+//d
+double total=0;
+    foreach (Empleado empleado in listaEmpleados)
+    {
+        double salarioEmpleado =empleado.CalcularSalario();
+        total +=salarioEmpleado;
+    }
+    System.Console.WriteLine("El monto total es ${total}");
+
+//e
+    
 }
