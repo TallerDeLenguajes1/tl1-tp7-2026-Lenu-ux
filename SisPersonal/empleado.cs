@@ -23,4 +23,42 @@ public class Empleado
     public string Apellido { get => apellido; set => apellido = value; }
     public DateTime FechaNac { get => fechaNac; set => fechaNac = value; }
     public DateTime FIngreso { get => fIngreso; set => fIngreso = value; }
+    public double SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
+    internal Cargos Cargos { get => cargos; set => cargos = value; }//porque es internal?
+
+    //metodos
+
+    public int CalcularAntiguedad()
+    {
+        int anioActual=DateTime.Today.Year;
+
+        int antiguedad=anioActual-fIngreso.Year;
+
+        return antiguedad;
+    }
+
+    
+    public int edadEmpleado()
+    {
+
+        int anioActual=DateTime.Today.Year;
+        int edad=anioActual - fechaNac.Year;
+
+        if (DateTime.Today< fechaNac.AddYears(edad))
+        {
+            edad --;
+        }
+
+        return edad;
+    }
+
+    public int aniosJubilarse()
+    {
+        int aniosJ= 65-this.edadEmpleado();
+       if (aniosJ <0)
+       {
+            return 0;
+       }
+        return aniosJ;
+    }
 }
