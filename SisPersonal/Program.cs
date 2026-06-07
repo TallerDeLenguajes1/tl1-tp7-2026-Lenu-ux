@@ -16,7 +16,7 @@ for (int i = 0; i < listaEmpleados.Length; i++)
 
     //apellido
     System.Console.WriteLine("Ingrese apellido: ");
-    listaEmpleados[i].Apellido= Console.ReadLine() ?? "";
+    
 
     //fecha nacimiento
     System.Console.WriteLine("Ingrese fecha de nacimiento (anio/mes/dia): ");
@@ -49,7 +49,8 @@ for (int i = 0; i < listaEmpleados.Length; i++)
     {
         listaEmpleados[i].Cargos=(Cargos)opcion;
     }
-
+    
+}
 //d
 double total=0;
     foreach (Empleado empleado in listaEmpleados)
@@ -60,5 +61,3 @@ double total=0;
     System.Console.WriteLine("El monto total es ${total}");
 
 //e
-    
-}
