@@ -1,5 +1,5 @@
 namespace EspacioSistema;
-enum Cargos
+public enum Cargos
 {
     auxiliar=1,
     administrativo=2,
@@ -24,7 +24,7 @@ public class Empleado
     public DateTime FechaNac { get => fechaNac; set => fechaNac = value; }
     public DateTime FIngreso { get => fIngreso; set => fIngreso = value; }
     public double SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
-    internal Cargos Cargos { get => cargos; set => cargos = value; }//porque es internal?
+    public Cargos Cargos { get => cargos; set => cargos = value; }//porque es internal?, debia poner publico a enum Cargos
     public string EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
 
     //metodos
