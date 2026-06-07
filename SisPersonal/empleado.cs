@@ -13,7 +13,7 @@ public class Empleado
     private string nombre;
     private string apellido;
     private DateTime fechaNac;
-    private char estCivil;
+    private string estadoCivil;
     private DateTime fIngreso;
     private double sueldoBasico;
     private Cargos cargos;
@@ -25,6 +25,7 @@ public class Empleado
     public DateTime FIngreso { get => fIngreso; set => fIngreso = value; }
     public double SueldoBasico { get => sueldoBasico; set => sueldoBasico = value; }
     internal Cargos Cargos { get => cargos; set => cargos = value; }//porque es internal?
+    public string EstadoCivil { get => estadoCivil; set => estadoCivil = value; }
 
     //metodos
 
@@ -60,5 +61,33 @@ public class Empleado
             return 0;
        }
         return aniosJ;
+    }
+
+    //ejercicio 2b
+    //metodo de calcular salario
+    public double CalcularSalario()
+    {
+        double adicional=0;
+    
+        int anios=this.CalcularAntiguedad();
+        //antiguedad
+        if (anios<=20)
+        {
+            adicional=sueldoBasico*(anios*0.01);
+        }else 
+        {
+            adicional=sueldoBasico*0.25;
+        }
+        //cargo
+        if (this.Cargos==Cargos.ingeniero || this.Cargos==Cargos.especialista)
+        {
+            adicional=adicional*1.50;
+        }
+        //estado civil
+        if (estadoCivil== "casado")
+        {
+            adicional+=150000;
+        }
+        return sueldoBasico+ adicional;
     }
 }
