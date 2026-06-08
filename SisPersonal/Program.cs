@@ -16,6 +16,7 @@ for (int i = 0; i < listaEmpleados.Length; i++)
 
     //apellido
     System.Console.WriteLine("Ingrese apellido: ");
+    listaEmpleados[i].Apellido= Console.ReadLine()?? "";
     
 
     //fecha nacimiento
@@ -26,7 +27,7 @@ for (int i = 0; i < listaEmpleados.Length; i++)
     }
     //estado civil
     System.Console.WriteLine("Ingrese estado civil: ");
-    listaEmpleados[i].EstadoCivil=Console.ReadLine()?? "";
+    listaEmpleados[i].EstadoCivil=Console.ReadLine()??"";
     
     //Ingreso a la empresa
     System.Console.WriteLine("Ingrese fecha de ingreso(anio/mes/dia): ");
@@ -45,8 +46,8 @@ for (int i = 0; i < listaEmpleados.Length; i++)
     ////cargos
     System.Console.WriteLine("Seleccione el cargo:");
     System.Console.WriteLine("1.Auxiliar \n 2.Administrativo \n 3.Especialista \n 4.Ingeniero\n 5.Directivo");
-    if (int.TryParse(Console.ReadLine(),out int opcion))
-    {
+    
+    if (int.TryParse(Console.ReadLine(), out int opcion)){
         listaEmpleados[i].Cargos=(Cargos)opcion;
     }
     
@@ -58,6 +59,22 @@ double total=0;
         double salarioEmpleado =empleado.CalcularSalario();
         total +=salarioEmpleado;
     }
-    System.Console.WriteLine("El monto total es ${total}");
+    System.Console.WriteLine($"El monto total es ${total}");
 
 //e
+Empleado empleadoJubilado=listaEmpleados[0];
+
+foreach (Empleado emple in listaEmpleados)
+{
+    if (emple.aniosJubilarse() < empleadoJubilado.aniosJubilarse())
+    {
+        empleadoJubilado=emple;
+    }
+}
+System.Console.WriteLine("---Empleado mas Proximo a jubilarse------");
+System.Console.WriteLine($"Nombre y Apellido:{empleadoJubilado.Nombre},{empleadoJubilado.Apellido}");
+System.Console.WriteLine($"Cargo:{empleadoJubilado.Cargos}");
+
+System.Console.WriteLine($"Edad del empleado:{empleadoJubilado.edadEmpleado()} anios");
+System.Console.WriteLine($"Antiguedad :{empleadoJubilado.CalcularAntiguedad()} anios");
+System.Console.WriteLine($"Faltan {empleadoJubilado.aniosJubilarse()} anios para jubilarse");
